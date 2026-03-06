@@ -28,7 +28,10 @@ INSTALLED_APPS = [
 
     # Módulos
     'accounts',
+    'management',
 ]
+
+AUTH_USER_MODEL = 'accounts.Usuario'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,3 +109,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Após o login, manda para a lista de colaboradores (ou a home do seu sistema)
+LOGIN_REDIRECT_URL = '/sistema/colaboradores/'
+
+# Após o logout, manda de volta para a tela de login
+LOGOUT_REDIRECT_URL = '/accounts/login/'

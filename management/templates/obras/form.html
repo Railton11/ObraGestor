@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Nova Obra</title>
+</head>
+<body>
+    <h1>Cadastrar Nova Obra</h1>
+    
+    <form method="POST">
+        {% csrf_token %} {{ form.as_p }}  <button type="submit">Salvar Obra</button>
+    </form>
+    
+    <br>
+    <a href="javascript:history.back()">Voltar</a>
+</body>
+</html>

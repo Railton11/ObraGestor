@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meus Colaboradores</title>
+</head>
+<body>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Sair do Sistema</button>
+    </form>
+    <h1>Lista de Colaboradores da Empresa</h1>
+    
+    <ul>
+        {% for colaborador in colaboradores %}
+            <li>{{ colaborador.nome }} - {{ colaborador.cargo }}</li>
+        {% empty %}
+            <li>Nenhum colaborador cadastrado na sua empresa ainda.</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
